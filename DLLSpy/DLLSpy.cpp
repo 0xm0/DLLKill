@@ -115,7 +115,7 @@ ESTATUS ParseCommandLineArguments(int argc, TCHAR* argv[])
 lblCleanup:
 	if (eReturn == ESTATS_MISSING_ARGUMENTS)
 	{
-		cout << "Usage: DLLKILL.exe" << endl;
+		cout << "Usage: DLLKill.exe" << endl;
 		cout << "-d [mandatory] Find DLL hijacking in all running processes and services." << endl;
 		cout << "-s [optional] Search for DLL references in the binary files of current running processes and services." << endl;
 		cout << "-r n [optional] Recursion search for DLL references in found DLL files privous scan." << endl << "   n is the number is the level of the recursion" << endl;
