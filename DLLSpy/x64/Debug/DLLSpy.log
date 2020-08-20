@@ -1,9 +1,0 @@
-﻿  DLLSpy.cpp
-  Impersonation.cpp
-  StringsExtractor.cpp
-  ServiceRegistry.cpp
-  Utils.cpp
-D:\DLLSpyzip\DLLSpyzip\DLLKill\DLLKill\DLLSpy\Utils.cpp(70,2): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-  Generating Code...
-  LINK : D:\DLLSpyzip\DLLSpyzip\DLLKill\DLLKill\x64\Debug\DLLSpy.exe not found or not built by the last incremental link; performing full link
-  DLLSpy.vcxproj -> D:\DLLSpyzip\DLLSpyzip\DLLKill\DLLKill\x64\Debug\DLLSpy.exe
