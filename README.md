@@ -20,10 +20,14 @@ Usage: DLLKILL.exe
 
 ```
 
+## RELEASE
+https://github.com/0xm0/DLLKill/releases/tag/0.0.1
+
+## NOTE
 I can't stress this enough; this application scans windows' C: Drive. don't try to emulate the exe on linux to check for dlls it's not gonna help you.
 Also don't run the -X module if you aren't aware of the risks this poses. Will add application and custom DLL Ignorance soon so there is no confusion.
 
-DISCLAIMER 1/2:
+### DISCLAIMER 1/2:
 - This application is still in development and some things might not function as they should. it's your responsibility if this has any bad effects on your pc. I'd highly recommend you run a scan rather than letting it take action as some applications such as discord or spotify's DLLs it considers as critical. still working on better and more efficent string extraction and checking modules..etc
-DISCLAIMER 2/2:
+### DISCLAIMER 2/2:
 - Base application was from DLLSpy (https://github.com/cyberark/DLLSpy) I just added a little sprinkles and some unicorn icecream to it. Use at your own risk, I'm not responsible for what you do with it.
