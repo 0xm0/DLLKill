@@ -37,14 +37,14 @@ StringsExtractor::~StringsExtractor()
 // ---------------------  
 // ---------------------
 
-char *StringsExtractor::GenerateStrings(unsigned char *CharsOfInterest, char *FileName, long MinimumStringSize, char *TerminatorString, long *OutputSize, string &sOutput)
+char* StringsExtractor::GenerateStrings(unsigned char* CharsOfInterest, char* FileName, long MinimumStringSize, char* TerminatorString, long* OutputSize, string& sOutput)
 {
 	DWORD SizeOfBuffer;
 	DWORD SizeActuallyRead;
 	DWORD CharsOfInterestArray[256];
-	unsigned char *InputFileBuffer;
-	char *OutputBuffer;
-	char *OutputBufferPos = NULL;
+	unsigned char* InputFileBuffer;
+	char* OutputBuffer;
+	char* OutputBufferPos = NULL;
 	long rc;
 	long StartStringOffset;
 	long UnicodeStartStringOffset;
@@ -60,7 +60,7 @@ char *StringsExtractor::GenerateStrings(unsigned char *CharsOfInterest, char *Fi
 	OutputBuffer = NULL;
 	(*OutputSize) = 0;
 
-	strlenCharsOfInterest = (long)strlen((char *)CharsOfInterest);
+	strlenCharsOfInterest = (long)strlen((char*)CharsOfInterest);
 	strlenTerminatorString = (long)strlen(TerminatorString);
 	if (strlenTerminatorString == 0)
 	{
@@ -75,11 +75,11 @@ char *StringsExtractor::GenerateStrings(unsigned char *CharsOfInterest, char *Fi
 
 	UnicodeStartStringOffset = StartStringOffset = -1;
 
-	rc = ReadBinaryFileIntoMemory(FileName, (char **)&InputFileBuffer, &SizeOfBuffer, &SizeActuallyRead);
+	rc = ReadBinaryFileIntoMemory(FileName, (char**)&InputFileBuffer, &SizeOfBuffer, &SizeActuallyRead);
 
 	if (rc == 0)
 	{
-		OutputBuffer = (char *)malloc(MYSTRINGS_MAXIMUM_FILE_SIZE);
+		OutputBuffer = (char*)malloc(MYSTRINGS_MAXIMUM_FILE_SIZE);
 		if (OutputBuffer)
 		{
 			OutputBufferPos = OutputBuffer;
@@ -176,7 +176,7 @@ char *StringsExtractor::GenerateStrings(unsigned char *CharsOfInterest, char *Fi
 				}
 			}
 
-		
+
 
 		}
 		memcpy(OutputBufferPos, TerminatorString, strlenTerminatorString);
@@ -194,7 +194,7 @@ char *StringsExtractor::GenerateStrings(unsigned char *CharsOfInterest, char *Fi
 		Size2realloc = (long)(OutputBufferPos - OutputBuffer);
 		(*OutputSize) = Size2realloc;
 		OutputBufferPos = OutputBuffer;
-		OutputBuffer = (char *)realloc(OutputBuffer, Size2realloc);
+		OutputBuffer = (char*)realloc(OutputBuffer, Size2realloc);
 		if (OutputBuffer == NULL)
 		{
 			// realloc failed - restore original address.
@@ -206,7 +206,7 @@ char *StringsExtractor::GenerateStrings(unsigned char *CharsOfInterest, char *Fi
 
 }
 
-long StringsExtractor::ReadBinaryFileIntoMemory(CHAR *CandidateFile, CHAR **FileBuffer, DWORD *SizeOfBuffer, DWORD *SizeActuallyRead)
+long StringsExtractor::ReadBinaryFileIntoMemory(CHAR* CandidateFile, CHAR** FileBuffer, DWORD* SizeOfBuffer, DWORD* SizeActuallyRead)
 {
 	long rc;
 	DWORD SizeToRead;
@@ -223,7 +223,7 @@ long StringsExtractor::ReadBinaryFileIntoMemory(CHAR *CandidateFile, CHAR **File
 		return(rc);
 	}
 
-	(*FileBuffer) = (CHAR *)malloc(SizeToRead + 2);
+	(*FileBuffer) = (CHAR*)malloc(SizeToRead + 2);
 	if ((*FileBuffer) == NULL)
 	{
 		return(MYSTRINGS_MEMORY_ALLOCATION_FAILURE);
@@ -246,7 +246,7 @@ long StringsExtractor::ReadBinaryFileIntoMemory(CHAR *CandidateFile, CHAR **File
 	return(rc);
 }
 
-long StringsExtractor::ReadBinaryFileIntoMemory(WCHAR *CandidateFile, CHAR *FileBuffer, DWORD SizeOfBuffer, DWORD *SizeActuallyRead)
+long StringsExtractor::ReadBinaryFileIntoMemory(WCHAR* CandidateFile, CHAR* FileBuffer, DWORD SizeOfBuffer, DWORD* SizeActuallyRead)
 {
 	DWORD rc = 0;
 	HANDLE hFileToRead;
@@ -283,9 +283,9 @@ long StringsExtractor::ReadBinaryFileIntoMemory(WCHAR *CandidateFile, CHAR *File
 
 
 
-long StringsExtractor::MyGetFileSizeFromName(CHAR *CandidateFile, DWORD *FileSize)
+long StringsExtractor::MyGetFileSizeFromName(CHAR* CandidateFile, DWORD* FileSize)
 {
-	FILE *file;
+	FILE* file;
 	errno_t Err;
 
 	(*FileSize) = 0;
@@ -302,7 +302,7 @@ long StringsExtractor::MyGetFileSizeFromName(CHAR *CandidateFile, DWORD *FileSiz
 	}
 }
 
-long StringsExtractor::MyGetFileSize(FILE *f)
+long StringsExtractor::MyGetFileSize(FILE* f)
 {
 	DWORD FileSize;
 
